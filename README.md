@@ -17,7 +17,7 @@ Bu repo, birden fazla Steam hesabında **oyun süresi simülasyonu (idling)** ya
 
 ## 🔧 Kurulum (Debian tabanlı sistemler için)
 ```bash
-bash <(curl -s https://raw.githubusercontent.com/thvie/thvieidlebot/main/install.sh)
+bash <(curl -s https://raw.githubusercontent.com/thvie/thvieidlebot/master/install.sh)
 ```
 
 ---
