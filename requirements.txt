@@ -1,3 +1,4 @@
 steam
 requests
 discord_webhook
+requests

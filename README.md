@@ -48,7 +48,7 @@ bash <(curl -s https://raw.githubusercontent.com/thvie/thvieidlebot/master/insta
 📌 Bu bilgiyi **maFile** ya da **ASF** gibi araçlarla alabilirsin.
 
 ### 2️⃣ Discord Webhook (isteğe bağlı)
-Eğer Discord’da log almak istersen, `config/webhook.json` dosyasına webhook URL'ni gir:
+Eğer Discord’da log almak istersen, `config/webhook.txt` dosyasına webhook URL'ni gir:
 
 ```json
 {
@@ -58,7 +58,7 @@ Eğer Discord’da log almak istersen, `config/webhook.json` dosyasına webhook 
 
 ### 3️⃣ Başlat!
 ```bash
-python3 main.py
+python3 idlebot.py
 ```
 
 ---
@@ -78,80 +78,81 @@ PR’lara açığım! Yeni özellikler eklemek ya da hataları düzeltmek isters
 
 ---
 
----
+# 🇬🇧 thvieidlebot – Steam Multi-Account Idle Bot
 
-# 🇬🇧 thvieidlebot – Steam Multi-Account Idling Bot
-
-Hello gamer 😎  
-This repository contains a fully automated, multi-account Steam idling bot to simulate playtime easily and efficiently.
+Hello! 👋  
+This repository contains an easy-to-install and fully automated **Steam Idle Bot** for simulating **playtime (idling)** on multiple Steam accounts.
 
 ### 🚀 Features
-- 🎮 Supports unlimited Steam accounts simultaneously
-- 🛑 Automatically stops idling when real gameplay is detected
-- 🔔 Discord webhook support for activity logs
-- 🧙 One-command installation (`install.sh`)
-- 🔐 Steam Guard support (shared_secret-based)
-- 📝 JSON config – easy to use and edit
+- 🔁 Runs an unlimited number of Steam accounts simultaneously
+- 🎯 Detects real gameplay and pauses fake idling automatically
+- 🔔 Logs events (start, stop, error, etc.) via Discord webhook
+- 🛠️ One-command installation (`install.sh`)
+- 🔒 Supports Steam Guard
+- 📊 Easy configuration with JSON-based config file
 
 ---
 
-## 🔧 Installation (Debian-based systems)
+## 🔧 Installation (for Debian-based systems)
 ```bash
-bash <(curl -s https://raw.githubusercontent.com/thvie/thvieidlebot/main/install.sh)
+bash <(curl -s https://raw.githubusercontent.com/thvie/thvieidlebot/master/install.sh)
 ```
 
 ---
 
 ## ⚙️ Usage
 
-### 1️⃣ Configure Accounts
-Edit the `config/steam_accounts.json` file:
+### 1️⃣ Configure Your Accounts
+Enter your account details into `config/steam_accounts.json` like this:
 
 ```json
 [
   {
     "username": "yourusername1",
     "password": "yourpassword1",
-    "shared_secret": "steamguard_secret",
+    "shared_secret": "mobileguard_shared_secret",
     "games": [730, 570]
   },
   {
     "username": "yourusername2",
     "password": "yourpassword2",
-    "shared_secret": "steamguard_secret",
+    "shared_secret": "mobileguard_shared_secret",
     "games": [440]
   }
 ]
 ```
 
-> 🔒 `shared_secret` is required for Steam Guard auto-login codes.
+🛑 *The `shared_secret` is required for mobile Steam Guard authentication.*  
+📌 You can obtain it using tools like **maFile** or **ASF**.
 
-### 2️⃣ (Optional) Set Up Discord Webhook
+### 2️⃣ (Optional) Discord Webhook
+If you want to log activity in Discord, enter your webhook URL into the `config/webhook.txt` file:
+
 ```json
 {
   "url": "https://discord.com/api/webhooks/.../..."
 }
 ```
 
-### 3️⃣ Run the Bot!
+### 3️⃣ Start the Bot!
 ```bash
-python3 main.py
+python3 idlebot.py
 ```
 
 ---
 
-## ❓ FAQ
+## ❓ Frequently Asked Questions
 
-**Q: Will it stop fake idling if I open a real game?**  
-🅰️ Yes! The bot pauses fake idling and resumes when you're done.
+**Q: Will fake idling stop when I open a real game?**  
+🅰️ Yes, the bot detects this and automatically pauses. It resumes once the game is closed.
 
-**Q: How do I get my `shared_secret`?**  
-🅰️ You can extract it from `.maFile` JSONs using **ASF** or **SteamDesktopAuthenticator**.
+**Q: What is `shared_secret` and how do I get it?**  
+🅰️ This is the Steam Mobile Guard key. You can find it inside `.maFile` JSONs using tools like **maFile** or **ASF**.
 
 ---
 
-## 🤝 Contributions Welcome
-Feel free to open PRs to add new features, improve functionality, or fix bugs. 🎉
+## 👨‍💻 Contribute
+Pull requests are welcome! You can contribute by adding new features or fixing bugs. ❤️
 
 ---
 
