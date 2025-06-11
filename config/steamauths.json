@@ -1,0 +1,16 @@
+{
+  "accounts": [
+    {
+      "username": "account1",
+      "password": "pass1",
+      "shared_secret": "ABCDEF123456",
+      "games": [730]
+    },
+    {
+      "username": "account2",
+      "password": "pass2",
+      "shared_secret": "ABCDEF654321",
+      "games": [730]
+    }
+  ]
+}
